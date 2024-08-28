@@ -1,0 +1,426 @@
+• Grundbegriffe der Computersicherheit und Privatheit definieren,
+• Grundlegende kryptographische Verfahren benennen und
+beschreiben,
+• Methoden zur Authentisierung und Zugriffskontrolle erklären,
+• Angriffe und Schwachstellen in den Bereichen der
+Softwaresicherheit, Netzwerksicherheit und Websicherheit
+erkennen und beschreiben,
+• geeignete Methoden und Lösungen benennen, vergleichen und
+auswählen, um Angriffe und Schwachstellen zu adressieren,
+• Grundkonzepte des Sicherheitsmanagements präsentieren.
+• kryptographische Verfahren erklären
+
+
+• Vorlesungen und Übungen sind relevant
+• Erläutern der Funktionsweise von XYZ
+• Vorteile/Nachteile
+• Geben Sie ein Beispiel für XYZ
+• Definieren Sie, was XYZ ist
+
+
+
+- Privatheit
+- Sicherheit
+
+IT-System: technisches System mit Fähigkeit zu Speicherung und Verarbeitung von Information
+Information: repräsentiert durch Daten; ergibt sich durch festgelegte Interpretation von Daten
+Objekte: repräsentieren Information
+- passiv (Dateien): Speicherung
+- aktiv (Prozesse): Speicherung und Verarbeitung
+- Assets: schützenswerte Güter eines Systems (Informationen und diese repräsentierende Objekte)
+Subjekte: Benutzer / aktive Objekte im Auftrag von Benutzern; können Zugriffsrechte haben
+Zugriff: Interaktion zwischen Subjekt und Objekt, bei der Informationsfluss auftritt
+Referenzmonitor: gewährt Subjekten Zugriff auf Objekte
+- positiver Ansatz: default-deny
+- negativer Ansatz: default-allow
+- gemischter Ansatz: Erlaubnisse und Verbote möglich; Konfliktlösung erforderlich
+
+
+Sicherheit (nach Eckert)
+- Funktionssicherheit (safety): Ist-Funktion == Soll-Funktion (Fehlverhalten: Programmierfehler); Grundlage für Informations-, Datensicherheit
+- Informationssicherheit (security): keine unautorisierte Informationsveränderung oder -gewinnung im System
+- Datensicherheit (protection): kein unautorisierter Zugriff auf Systemressourcen oder Daten + Datensicherung
+- Datenschutz (privacy): informationelle Selbstbestimmung (Erhebung und Verarbeitung persönlicher Daten kontrollieren)
+
+Verlässligkeit (dependability): Funktionssicherheit + Funktion zuverlässig (reliability)
+
+
+Schutzziele
+1. Authentizität (authenticity): eindeutige, überprüfbare Identität (charakteristische Eigenschaft) -> authentication
+2. Datenintegrität (integrity): zu schützende Daten können nicht unautorisiert und unbemerkt (Hashfunktionen) manipuliert werden
+3. Vertraulichkeit (confidentiality): keine unautorisierte Informationsgewinnung (Verschlüsseung, Zugriffsrechte)
+4. Verfügbarkeit (availability): Quoten für Nutzung
+5. Verbindlichkeit (non-repudiation): Signaturen, Zuordnung von Handlung zu Subjekt/Person
+6. Privatheit: Datenschutz (privacy), Anonymisierung von Daten, Pseudonymisierung von Daten, Vertraulichkeit (confidentiality), Verdecktheit (versteckte Datenübertragung), Anonymität, Unbeobachtbarkeit (unobservability: verdeckte Nutzung von Diensten)
+
+
+Schwachstellen: verwundbare Stelle eines Systems
+- physisch: Diebstahlsgefahr
+- natürlich: Erdbeben
+- softwarebedingt: fehlende Eingabeprüfung
+
+Verwundbarkeit (vulnerability): Schwachstelle, über die Sicherheitsdienste umgangen werden können
+- Exploit
+- Zero-Day-Exploit
+
+Bedrohung (threat): potentieller Verlust eines Schutzziels durch Schwachstellen / Exploits
+Risiko einer Bedrohung (risk): Eintrittswahrscheinlichkeit, Schadenshöhe des potentiellen Schadens
+
+Bedrohungsmatrix
+- Zeilen: Gefährungsbereiche: externe Angriffe (physische Zerstörung, Diebstahl, Passwort beobachten), interne Angriffe (Zugriff auf Speicher, Information, Passwort knacken, Viren), DoS, Rechtemissbrauch, Verfügbarkeit (Speicher, Netzlast, CPU)
+- Spalten: Auslöser von Bedrohungen (Programmierer, interner Benutzer, externer Benutzer, verwendete Dienste)
+
+Bedrohungsbaum
+- Wurzel: Angriffsziel
+- Knoten: Angriffsziel
+- Kinder: Teilziele (durch UND oder ODER verbunden)
+
+Risiko = Schadenshöhe (primäre + sekundäre Schäden) * Eintrittswahrscheinlichkeit (durch Pentests bestimmt)
+
+- sicheres Computer-System: erfüllt vorgesehene Zwecke, ohne relevante Rechte zu verletzen
+
+Angreifermodell: maximale Stärke eines Angreifers, der der Schutzmechanismus standhält
+- Rolle des Angreifers im System (Außenstehende, Benutzerin, Administratorin)
+- Verbreitung des Angrifers (verwundbare Stellen im System)
+- Verhalten des Angreifers
+  - Art des Angriffs (aktiv / passiv)
+- Rechenkapazität des Angreifers
+- Schutz vor allmächtiger Angreiferin ist unmöglich
+
+Motivationen
+- monetäres Interesse
+- politische/ideelle Überzeugung
+- Selbstdarstellung
+
+security policy: Menge von technischen/organisatorischen Regeln, Verhaltensregeln, Rollen, Maßnahmen für Schutzziele
+Sicherheitsmaßnahme (safeguard, security measure): Bestandteil der Systemarchitektur, um Schutzziele durchzusetzen
+
+mehrseitige / multilaterale Sicherheit: Schutzziele aller Beteiligten einbeziehen -> Schutzkonflikte austragen
+- Randbedingungen: möglichst wenig Vertrauen in andere; Sicherheit mit minimalen Annahmen über andere
+
+Bewertungskriterien
+- Common Criteria for Information Technology Security Evaluation
+  - Produkte werden von akkreditierter Prüfstelle evaluiert
+  - Festlegung von Sicherheitsfunktionalität, Vertrauenswürdigkeit
+  - Funktionalitätsklassen: Sicherheitsanforderungen an Funktionalität
+
+Ziele von Sicherheitsmechanismen
+- Sicherheitsverletzungen vermeiden
+- Schaden begrenzen
+- Konsequenzen von Verletzungen kompensieren
+
+
+Angriffsziele
+- Implementierungsfehler
+- menschliche Nachlässigkeit
+- konzeptionelle Fehler in Sicherheitsarchitektur
+
+Nährboden für Angriffe (Eckert)
+- gemeinschaftliche Nutzung von Programmen und Daten
+- kein Unterschied zwischen Daten und Programmen (universelle Interpretierbarkeit)
+- Transitivität des Informationsflusses
+
+Bedrohungsabwehr (Eckert)
+- starke Typisierung, Code-Verifikation
+- Erkennung und Behebung von Angriffsmöglichkeiten (statische Code-Analyse, IDS, Virenscanner)
+- Schadensbegrenzung (Sandboxing)
+
+Software-Schwachstelle: Buffer-Overflow (strcpy)
+
+Schadsoftware: Programm mit für Benutzer verborgener Funktion
+- Trojaner: geheime Zusatzfunktion (backdoor) (Start durch User oder logische Bombe)
+  - backdoor: totale Kontrolle
+  - trojan-spy: Tastatureingaben, Bildschirmausgaben, Prozesslisten
+  - trojan-DDoS
+  - trojan-fakeAV: Geld über erfundene Viren erpressen
+  - trojan-SMS
+
+- Virus: nutzt Wirtsprogramm; Reproduktion + Schadensteil (jump-start) (integrity, evt. confidentiality)
+  - erkennen, ob Programm bereits infiziert
+  - Infektion
+  - evtl. Schadcode
+  - evtl. jump zu Wirtsprogramm
+
+  - Programm-Viren
+  - Boot-Viren
+  - Makro-Viren
+
+- Wurm: ohne Wirtsprogramm / menschliche Interaktion aktiv, kopiert sich über Netzwerk (Integrity, Confidentiality, Availability)
+
+
+Mobiler Code
+- Code wird auf potientiell nicht vertrauenswürdigen Rechnern generiert und auf Gastrechnern ausgeführt
+
+- Bedrohungen für mobilen Code
+  - passiv: unsichere Übertragung abhören -> lokal ausführen und Zugang zu Daten erhalten
+  - aktiv: bei Übertragung modifizieren, Ausführung verhindern (DoS)
+
+  - Trusted Platform Modules (TPM) als Schutz gegen Angriffe (Gastrechner authentifizieren)
+- Bedrohungen für Gastrechner
+  - aktive und passive Angriffe aller Art (abhören, Daten ändern, ...)
+  -> Zugriffsrechte beschränken (Sandboxing)
+
+  - Maskierungsangriffe: falsche Funktionalität vorgeben
+
+Social Engineering
+
+typ. Angriffsabfolge
+- Informationsgewinnung
+- Angriff
+- Erweiterung der Rechte
+- Spuren verwischen
+
+
+Identifikation: Identität angeben
+Authentifikation: Identität nachweisen (sein [Physiologie, Verhalten], besitzen, wissen [Passwort: Ex-ante-Unterstützung (Vorgaben), simultane Unterstützung (Passwortstärke), Ex-Post-Unterstützung (Änderung, um Stãrke zu erhöhen)])
+Authentisierung: Nachweis verifizieren
+
+Cue-Passwort: Bereich auf Bild antippen
+Recall-Passwort: Pattern nachzeichnen (Android-Login)
+
+
+Hash (mind. 160 bit)
+- pre-image resistance: nicht Ursprung aus Hash berechnen
+- second pre-image resistance: keinen zweiten Wert finden, der auf gleichen Wert abbilden
+- Kollisionsresistenz: keine Kollsionen finden (Geburtstagsparadoxon): 2^(n/2) Hashs notwendig, um mit 50% Kollision zu erhalten (n bit Hashlänge)
+
+
+Message Authentication Code (MAC)
+- kryptographische Checksumme (keyed hash)
+- Integrität + Authentizität
+- Secret pre-/postfix Schlüssel H(M|K)
+
+Passwörter speichern
+- Salt gegen Wörterbuchangriffe
+- Zeitaufwand für Passwortberechnung durch Iterationen erhöhen
+
+- Online- / Offline-Angriffe
+- Zwei-Stufen-AUthentifizierung (OTP, Time-based OTP, ...)
+
+/etc/shadow: Key und Konstante mit DES und Salt verschlüsselt, eine Art MAC
+
+
+Kerberos: gegenseitige Authentifikation von Client und Server auf unsicherem Kommunikationskanal (symmterische Kryptographie)
+- v4: Wörterbuchangriff möglich (nur Identifikation, keine Authentifikation)
+
+- Client kann sich mit TGT innerhalb der Lebenszeit bei TGS authentifizieren (=T_{C, TGS}
+
+Key-Distribution Center (KDC) (Eckert)
+- vertrauenswürdiger Authentifikationsserver
+- vertrauenswürdiger Ticket-Granting-Server (TGS)
+- Server sendet verschlüsseltes TGT (Ticket granting ticket)
+
+- mehrere KDC (single point of failure)
+- Realms, um Netzwerk auf mehrere KDC aufzuteilen (KDC kann sich als User ausgeben, Leistungsanforderung)
+
+- Tickets enthalten alle relevanten Informationen für authentifizierte Nutzung (Server, Client, Addr, Zeit, Lebenszeit, Sitzungsschlüssel): KDC muss nicht alle Informationen über Session selbst speichern / verwalten
+  - erfordern Zeitsynchronisierung
+
+Zugriffskontrolle
+- Authentifikation
+- keine unautorisierte Manipulation von Zugriffsrechten
+- Unumgehbarkeit
+- Ununterbrechbarkeit
+- Widerspruchsbehandlung
+
+Benutzerbestimmbare Zugriffskontrolle (Discretionary Access Control): Objekteigentümer entscheidet über Zugriffskontrolle
+- Zugriffskontrollmatrix
+- ACL (jede Datei einzeln)
+  - skaliert schlecht
+  - Rechte an Subjekten, nicht an Aufgaben orientiert
+- Capabilities (jeder Nutzer einzeln)
+  - Rechtedelegation möglich
+  - Dezentrale Verwaltung möglich
+  - Rechteänderung nicht unmittelbar
+
+- Linux: Kombination aus ACL (erster Zugriff) und Capabilities (File Handle)
+
+- Rollenbasierter Zugriff
+  - need-to-know
+  - seperation of duty
+  - Zuordnung Subjekt - Rollen
+  - Zuordnung Rollen - Zugriffsrechte
+
+  - Sitzung = (Subjekt, Rollen)
+
+Systembestimmte Zugriffskontrolle (MAC, Mandatory Access Control): Systemregeln entscheiden über Zugriff
+- Zugriffsrechte aufgrund systemweiter Regeln
+  - kein Zugriff auf selbst erstellte Dateien durch Subjekte
+  - formaler Nachweis, dass Computer klassifizierte Information sicher verarbeiten kann
+
+- Multi-Level Security System (MLS)
+  - Klassifikation nach Grad der Vertraulichkeit
+
+- Bell-La Padula-Modell
+  - No-read-up: r,x nur möglich, wenn Subjekt mindestens Zugriffsrecht der Objektsklassifikation hat (sonst evt. noch append möglich)
+  - r,w nur auf eigener Ebene
+  - append nicht nach unten
+  - r,x nicht nach oben
+
+  - Problem: sukzessive höherre Einstufung (Chef editiert ...)
+  - betrachtet Vertraulichkeit
+
+  - BIBA-Modell: Bell-La Padula für Integrität
+    - i(s) Integritätslevel von Subjekt s
+    - i(o) Integritätslevel von Objekt o
+
+    - no-write-up
+    - no-read-down
+
+  - Chinese Wall-Modell (Interessenskonflikte)
+    - unzulässige Ausnutzung von Insiderwissen verhindern: Zugriffshistorie, Beschränkung durch vergangene Zugriffe
+    - Aufhebung von Interessenkonflikten nicht vorgesehen
+
+Dateizugriff Linux
+- i-node in i-node-Tabelle in Kernel laden
+- prüfen, ob Zugriffswunsch (r,w,x) möglich
+- file-hande zurückgeben mit erlaubten Zugriffsrechten
+  - open-file-tabelle
+
+- objektspezisiche Zugriffskontrolllisten und subjektspezifische Zugriffsausweise
+- superuser hat volle Rechte (keine seperation of duty)
+
+
+Zugriffskontrolle in Netzwerken (Firewalls)
+- Netze verschiedener Vertrauenwürdigkeit, Sicherheitsanforderungen
+- kontrollierte Durchlässigkeit durch Zugriffskontrolle
+
+- Zugriffsrestriktionen bei Paketweiterleitung
+- Protokollierung
+- Authentifizierung
+
+- Paketfilter (zustandslos) (screening-router, kann Port-Adressen evt. nicht analysieren ???)
+  - Subjekte: Sendeadresse, Sendeport
+  - Objekte: Zieladresse, Zielport
+  - Filterregeln ^= Zugriffskontrollmatrix
+- Circuit level gateway (UDP, TCP)
+  - Transport layer
+  - Authentifikation möglich
+  - Alle Anfragen über SOCKS-Server
+  - anwendungsabhängige Filter
+- Application level gateway (application proxy)
+  - nur für spezifizierte Anwendungen möglich
+
+  - feingranular
+  - umfangreiches Logging möglich
+
+- Screened Host (Bastion Host)
+  - Trennung von Paket- und Applikationsfilter
+
+
+- Dual-homed Gateway: FW-Bastion-FW
+- Screened subnet: DMZ (zwei FW): keine direkte Verbindung nach innen oder außen
+- Screened host: 1 firewall vor Host; server frei
+
+
+- Trojanische Pferde: well-known Port verwenden für Command
+
+
+- Kompromiss zwischen Schutz und Kosten / Funktionalität
+
+
+Kryptographie: Lehre von Methoden zu Ver- und Entschlüsselung (Geheimhaltung)
+Kryptanalyse: Forschung zu Methoden von Entschlüsselung ohne Schlüssel
+Kryptologie: Kryptographie + Kryptanalyse
+Steganographie: existenz einer Nachricht verbergen
+
+
+Verschlüsselung
+- Spalten-Transposition (SKYTALA)
+- FREI-Permutation (erfordert gute Verteilung des Klartexts)
+
+- Produktchiffre: Kombination aus Transposition und Substitution
+
+- Stromchiffren: Bits Schlüsselstrom gleichverteilt 0,1
+- von k abhängig
+
+
+- DES: 56 bit Schlüssellänge, S-Box
+- 3DES: 112 bit effektive Schlüssellänge
+
+- AES: 128 bit Blockgröße, 128, 192, 256 bit Schlüssellängen
+  - SubBytes
+  - ShiftRows
+  - MixColumns
+  - AddRoundKey
+
+- Betriebsmodi: zusätzlich zu Vertraulichkeit auch Integrität, Authentizität herstellen
+
+
+Public-Key
+- RSA
+
+Hashfunktionen auf Blockchiffrenbasis
+
+Digitale Signaturen
+- DSA
+- ECDSA
+- RSA
+  - hashen, signieren, prüfen
+  - anfällig für Multiplikativität (Homomorphismus bzgl. Multiplikation)
+
+
+Schlüsselmanagement: Techniken zur Etablierung und Aufrechterhaltungen von Schlüsselbeziehungen
+- Punkt-Punkt (n^2 Schlüssel) vs. Zentralisiert
+  - Schlüsselverteilungszentrum (KDC): jeder Nutzer hat nur gemeinsamen Schlüssel mit KDC; KDC erstellt k_AB
+  - Schlüsselübersetzungszentrum (KTC): A erstellt Schlüssel k_AB
+  - kompletter Sicherheitsverlust, wenn KDC/KTC kompromittiert
+- Trusted 3rd Parties (TTPs)
+  - In-Line TTP: Echtzeit-Kommunikation
+  - On-Line TTP: Echtzeit-Kommunikation, nicht über Server
+  - Off-Line TTP: nicht Echtzeit-Kommunikation
+
+- Aufgaben: Wartung, die dem Verlust der Vertraulichkeit und Authentizität von geheimen und öffentlichen Schlüsseln begegnet
+  - Schlüsselerzeugung
+  - Schlüsselübermittlung
+  - Verifikation von Schlüsseln
+
+- Schlüsseletablierungsprotokolle
+  - sicherer Kanal
+  - Authentizität erforderlich
+
+- Schlüsselhierarchie
+  - Master-Schlüssel
+  - Schlüssel-verschlüsselnder Schlüssel (durch Verschlüsselung mit Masterschlüsseln geschützt)
+  - Datenschlüssel (Sitzung)
+
+- Zertifikat
+  - öffentlicher Schlüssel mit Daten- (mit Identifikationsmerkmal) und Signaturteil
+
+
+- Schlüsseletablierung
+  - Schlüsselvereinbarung
+    - Diffie-Hellman
+  - Schlüsseltransport / Schlüsselverteilung (von einer Partei erstellt)
+
+
+TLS
+- Transport Layer
+- Master-Secret für Session
+  - individuelle Schlüssel pro Verbindung
+- Authentifikation
+- Integrität
+- Vertraulichkeit
+- Schlüsselaustausch
+
+- Authentifiziert (Server/Server und Client) vs. anonym
+
+
+Datenschutz (data protection): Recht
+- Rechtmäßigkeit
+- Einwilligung
+- Zweckbindung
+- Erforderlichkeit
+- Transparenz
+- Datensicherheit
+- Kontrolle
+
+Privatsphäre (privacy): oft physikalischer Kontext
+Privatheit (privacy): Oberbegriff von Datenschutz und Privatsphäre (technische Aspekte)
+Vertraulichkeit (confidentiality): begrenzter Datenzugriff
+IT-Sicherheit dient Schutz der Privatheit
+
+Schutzziel
+- Personenbezogene Daten: Einzelangaben über persönliche oder sachliche Verhältnisse einer bestimmten oder bestimmbaren natürlichen Person
+  - identifizierbare Person
+

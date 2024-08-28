@@ -1,0 +1,301 @@
+Blatt 1
+
+1.
+Verbindlichkeit (non-repudiation) + Privatheit (privacy)
+Vertraulichkeit -> Zerstörung von Information <> Verfügbarkeit -> erhöhte Wahrscheinlichkeit des Verlusts von Vertraulichkeit
+
+2.
+Zweck: Systematische Ermittlung von (allen) möglichen Angriffen und deren Ursachen
+Aufbau: Spalten für Verursacher, Zeilen für Gefährdungsbereiche, Zellen für konkreten Angriff
+
+3.
+Unklar, ob die Bearbeitung so gewünscht war.
+
+                    Apps                                      Netzwerk                    Sensoren
+externe Angriffe    -                                         Kabel zerstören             Vandalismus (Sensoren, Kameras)
+interne Angriffe    Steuerung übernehmen (Alarmanlage aus)    Beobachten von Steuerung -> Replay-attack
+Verfügbarkeit       Ausschalten                               Netzlast erzeugen           -
+
+4.
+Zweck: Systematische Ermittlung von (allen) möglichen Angriffen und deren Ursachen
+Aufbau: Wurzel ist Angriffsziel, Kinder sind Teilziel, um Ziel zu erreichen (mit UND- oder ODER-Verknüpfungen verbunden)
+
+5.
+vergleiche bedrohungsbaum1.pdf
+
+6.
+Schadenshöhe: Kosten, sobald der Schadensfall eintritt (umfasst primäre Kosten [Wiederbeschaffungskosten, Produktivitätsausfall] und sekundäre Kosten [Imageverlust])
+Erwartungswahrscheinlichkeit: abhängig von Motivation, Ressourcen (Kenntnisse, Budget) eines potentiellen Angreifers
+Zweck: Schätzung der Wahrscheinlichkeit einer Bedrohung und des resultierenden Schadens. R = S * E
+
+7.
+Schwelle für geringes/mittleres/hohes Risiko bei Bedrohungsmatrix undefiniert
+
+
+Blatt 2
+
+1.
+- gemeinschaftliche Nutzung von Programmen und Daten: öffentliche Verzeichnisse
+- kein Unterschied zwischen Daten und Programmen (universelle Interpretierbarkeit): von-Neumann-Architektur, einfahce Modifikation von Programmen
+- Transitivität des Informationsflusses: Informationen können weitergeleitet werden
+
+2.
+- Verhinderung (Code-Verifikation, stark typisierte Programmiersprachen)
+- Erkennun und Behebung (statische Programmcodeanalysen, Virenscanner, IDS)
+- Schadensbegrenzung (Sandboxing)
+
+3.
+Es handelt sich um einen Trojaner. Trojaner müssen aktiv vom Benutzer ausgeführt werden und enthalten zusätzlich zur bekannten Funktionalität eine (meist schadhafte) geheime Zusatzfunktionalität.
+
+4.
+Logische Bedingungen (z.B. Datum, fehlende Datei)
+
+5.
+- Editoren
+- Datenbanken
+- Betriebssystemfunktionen
+
+6.
+- Stealth-Viren: große anstelle von kleinen Dateien, in Überwachungsprozess drin, verwischte Spuren
+- Polimorphe Viren: ändern sich selbst
+- Retro-Viren: bekämpfen Anti-Viren-Programme
+
+7.
+Sasser (2004): Unternehmen gezielt angreifen
+Conficker (2008): Wörterbuchangriffe auf Root-Passwort (Windows)
+WannaCry (2017): ransomware
+
+8.
+- Bot-Netze bestehen aus Zombies (infizierte Computer, die auf Befehl agieren) sowie einer Entscheidungsinstanz. Sind zentral (z.B. IRC) oder dezentral (P2P) organisiert.
+- Abwehrstrategien: restriktiver Netzwerkzugriff (Ports sperren, Firewalls), Aktivitätskontrolle, Monitoring/Logs, restriktive Berechtigungen
+
+
+Blatt 3
+
+1.
+- ist: 1
+- hat: 3, 4, 6
+- weiß: 2, 5, 7
+
+2.
+- Physiliologisch: Fingerabdruck, Irisscan
+- Verhaltensbasiert: Tastatureingabe-Charakteristik, Blinzeln, Gang
+Biometrische Merkmale sollen als einzigartiges charakteristisches Merkmal zum Zweck der Authentisierung dienen. Sie sind (nicht-ablegbare) Teile des menschlichen Körpers.
+
+3.
+- Vorteile: nicht ablegbare Merkmale (personengebunden statt personenbezogen), Gültigkeitsdauer lang
+- Nachteile: kann nicht erneuert werden, Datenschutz (eindeutiges Merkmal)
+
+4.
+false-positive: als korrekt erkannt, obwohl falsch
+false-negative: als falsch erkannt, obwohl korrekt
+
+5.
+per Kamera aufnehmen und einspielen?
+Abfrage zu Menschen überbrücken?
+
+6.
+hier: Recognition-based
+Cue-based: richtige Reihenfolge bei einem Bild
+Recall-based: Pattern
+
+7.
+f (ex-ante)
+w
+f (ex-post)
+f (ex-ante)
+w
+
+8.
+Alle Passwörter werden gehasht gespeichert, und vor dem Hashen wird ein zufälliger Wert konkateniert. Das macht Kollissionen bei gleichem Passwort unwahrscheinlich.
+
+9.
+w
+w
+w
+w
+w
+f (zunächst?)
+w
+w
+
+10.
+Wörterbuchangriff, Brute-Force, Shoulder-Surfing, MitM, Key-Logging, ...
+
+11.
+Es sind zusätzliche Daten zur Authentifizierung erforderlich -> bei OTPs lässt sich dauerhafter Angriff unterbinden, selbst wenn MitM zeitweise erfolgt (Passwort allein genügt nicht zur dauerhaften Nutzung)
+
+12.
+Eine (Netzwerk-)Verbindung wird von einer dritten Person umgeleitet. Diese dritte Person C gibt sich (im Falle einer beidseitigen Kommunikation) A gegenüber als B aus und B gegenüber als A aus.
+
+13.
+(Aufgabenstellung ist murks. Voraussetzung kann ebensogut ein falsches Zertifikat sein.)
+Es handelt sich um OTPs, wodurch Angriffe wie das Auslesen der TAN über Hardware-Angriffe nicht mehr zielführend sind. Transaktionen können nur noch stattfinden, wenn User dies gerade selbst machen möchte.
+
+14.
+Geheimer Schlüssel muss über sicheren Kanal ausgetauscht sein.
+Symmetrische Verschlüsselung: gleicher Schlüssel wird zum Ent- und Verschlüsseln verwendet
+
+15.
+Version 5
+
+Client
+Authentifizieren (Benutzername, Passwort)
+Authentisieren + K_A berechnen
+Entschlusseln von (Alice,Zeit) und Zeit prüfen
+K_A(TGT)    Ticket-Granting-Ticket
+
+16.
+ausgestellt durch Ticket-Granting-Server
+Inhalt: Name des Clients, Name des Servers, IP, Lebenszeit, session key
+Ticket wird zur Generierung eines Sitzungsschlüssels verwendet
+
+17.
+KDC braucht Session-Informationen nicht zu speichern
+
+18.
+Authentikator ermöglicht einem Server, die Authentizität eines Clients festzustellen: wird verschlüsselt an Server geschickt (Schlüssel gilt als Authentikation)
+Inhalt: client name, addr, time
+
+19.
+Vorteil: Authentifikation mit Passwort nicht über Server notwendig (nimmt Gefahr + Problematik der Schlüsselverteilung); Hinzufügen und Entfernen von Usern einfach
+Nachteil: single point of failure, kann sich als Nutzer authentifizieren
+
+20.
+KDC
+Server
+K_B(A_C)
+prüft Authentikator A_C
+K_B(K_{B,TGS},K_{TGS}(TGT))
+Bob,Server,K_{B,TGS}(A_{C}), K_{TGS}
+TODO
+
+
+Blatt 4
+
+1.
+Objekt: repräsentiert Information; kann aktiv sein (Datenverarbeitung + -speicherung) oder passiv (Datenspeicherung)
+Subjekt: Benutzer oder aktive Objekte im Auftrag von Benutzern
+Zugriff: Interaktion zwischen Benutzer und Objekt, die durch Informationsfluss auftritt
+Zugriffsrecht: erlauben oder verbieten bestimmte Aktionen; können (identifizierbaren) Subjekten zugewiesen werden; wird durch Referenzmonitor gewährt/verweigert
+
+2.
+gemischten
+negativen
+positiven
+
+3.
+w
+f   unautorisierte Manipulation nicht möglich
+w
+w
+f   Objekteigentümer entscheidet
+f   ist benutzerbestimmbare Zugriffskontrolle
+w
+f   MAC
+w
+
+4.
+Jedem Subjekt sind zu jedem Objekt entsprechende Rechte zugewiesen
+Vorteil: flexibel, dezentrale Verwaltung möglich, Rechtedelegation möglich
+Nachteil: Zugriff bleibt möglich, auch wenn Zugriffsrecht entzogen wurde / Rechteänderung nicht direkt wirksam
+
+5.
+a)
+Confidentiality nach Geheimhaltungsstufe, ermöglicht formalen Nachweis
+
+b)
+append nach oben, append+rwx auf gleicher Ebene, rx nach unten
+
+c)
+Erste Regel?
+
+d)
+von höher Eingestuften bearbeitete Dateien können nicht mehr gelesen/bearbeitet werden
+
+e)
+Vertrautheit nacch Sicherheitseinstufung
+
+6.
+a)
+Integrität
+
+b)
+No-write-up: S kann O schreiben, falls i(S) >= i(O)
+No-read-down: S kann O lesen, falls i(S) <= i(O)
+
+7.
+a)
+rwx
+
+b)
+chmod g+r datei
+
+c)
+chmod g+rwx datei
+
+d)
+Rechte wurden nicht genannt.
+
+8.
+a)
+eine Datei
+Lese-, Schreib-, Ausführungsrechte
+keine Rechte
+Lese-, Ausführungsrechte
+
+b)
+/etc/shadow
+Integrität, Vertraulichkeit, Verfügbarkeit ... ganzes System gefährdet
+...
+
+c)
+SUID: Programm wird immer mit Rechten des Nutzers ausgeführt, der es gehört
+SGID: Programm wird immer mit Rechten der Gruppe ausgeführt, der es zugeordnet ist
+Sticky-Bit: Dateien können nur durch Eigentümer von Datei und Verzeichnis (+ Superuser) gelöscht werden, wenn auf Folder sticky bit gesetzt wurde
+
+9.
+Paketfilter: IP/Port filtern
+Circuit level: stateful (TCP/UDP connection), universell
+Application level: anwendungsprotokollspezifisch
+
+10.
+Dual-Homed-Gateway
+
+11.
+w
+f
+f   verhindern keine Erhöhung der Sicherheit
+w
+w
+f   gibt keinen perfekten Schutz
+
+
+Blatt 5
+
+1.
+
+
+2.
+- symmetrisch, asymmetrisch, beweisbar sicher (OTP)
+- Verschlüsselung, Authentifizierung
+
+4.
+e)
+Nein. Zwar ist der Key Space ausreichend groß, jedoch sind andere Analysen (Häufigkeitsanalysen) bei Texten möglich.
+
+7.
+Integer Factorization
+
+
+10.
+...
+symmetrische Signatur
+asymmetrische Signatur
+privaten
+
+11.
+Weil es ineffizient ist + Sicherheitserwägungen
+
+12.
+Message digest H bilden -> RSA_{priv}(H) -> an Nachricht anhängen

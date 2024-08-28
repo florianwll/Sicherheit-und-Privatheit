@@ -1,0 +1,29 @@
+# Exam 1
+- Zitat Zuordnen Schutzziele
+- mTAN -Verfahren -> Warum sich gegen ...
+- Worauf sollte man bei Zwei-Faktor Authentifizierung
+- asymmetrisch vs symmetrisch Verfahren (Was ist "lytorische Verschluss")
+- Was ist Substitutions-Chiffre? + BSP
+- Code gegeben wo ist er unsischer => Warum
+- Passwirt Angriffe vermeiden, Wie?
+- Tunnel/Transport Modus
+- Firewalls -> welche Prinzipien -> Was ist für ...
+- STRIDE-Modell
+- 2 Prinzipien von Design bei Datenschutz
+- OTP A,B ausrechnen
+- CAESAR- Verschlüsselung ...
+- Port 80 - Trojanisches Pferd
+- Application - Level Gateway
+- BIBA Modell (Wie es funktioniert, Modell Anmalen, Prinzipien)
+- RSA Prinzipien -> worauf beruht die Sicherheit
+- Tunnel, Transportmodus erläutern
+- Public key Pinning -> TOFU - Prinzip
+- MAC vs ... was ist ... 
+- Screened Host vs Screened SUbnet
+- Aufbau Virus
+- welche Schutziele wetrden durch Viren verletzt
+- Multiple Choice zu Würmer, Circuit-Level-Gate
+- Chinese- Wall, passive-aktiv
+- Definition Virus
+- Anonymität schützt nicht vor Identifikation (wie kann das realisiert werden)
+- was gibt es für biometrische Merkmale
